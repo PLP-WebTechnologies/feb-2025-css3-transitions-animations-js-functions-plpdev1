@@ -1,0 +1,285 @@
+/* Base styles and variables */
+:root {
+    /* Light theme variables */
+    --bg-color-light: #f5f5f5;
+    --text-color-light: #333;
+    --card-bg-light: #fff;
+    --btn-bg-light: #4a90e2;
+    --btn-text-light: #fff;
+    --border-color-light: #ddd;
+    
+    /* Dark theme variables */
+    --bg-color-dark: #222;
+    --text-color-dark: #eee;
+    --card-bg-dark: #333;
+    --btn-bg-dark: #5a6bff;
+    --btn-text-dark: #fff;
+    --border-color-dark: #444;
+    
+    /* Default theme (light) */
+    --bg-color: var(--bg-color-light);
+    --text-color: var(--text-color-light);
+    --card-bg: var(--card-bg-light);
+    --btn-bg: var(--btn-bg-light);
+    --btn-text: var(--btn-text-light);
+    --border-color: var(--border-color-light);
+    
+    /* Animation durations */
+    --transition-fast: 0.3s;
+    --transition-medium: 0.5s;
+    --transition-slow: 1s;
+    --animation-speed: var(--transition-medium);
+}
+
+/* Dark theme class */
+body.dark-theme {
+    --bg-color: var(--bg-color-dark);
+    --text-color: var(--text-color-dark);
+    --card-bg: var(--card-bg-dark);
+    --btn-bg: var(--btn-bg-dark);
+    --btn-text: var(--btn-text-dark);
+    --border-color: var(--border-color-dark);
+}
+
+/* Base reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.title {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+/* Theme toggle button */
+.theme-toggle button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--card-bg);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.theme-toggle button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Toggle icon animation */
+.toggle-icon {
+    display: inline-block;
+    transition: transform 0.5s;
+}
+
+body.dark-theme .toggle-icon {
+    transform: rotate(360deg);
+}
+
+/* Card styles */
+.card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.card-body {
+    padding: 20px;
+}
+
+/* Button styles */
+.btn {
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+/* Animation box */
+.animation-box {
+    height: 200px;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.animated-element {
+    width: 50px;
+    height: 50px;
+    background-color: var(--btn-bg);
+    border-radius: 4px;
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    gap: 10px;
+}
+
+/* Preferences section */
+.preferences {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.preference-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+select {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    background-color: var(--card-bg);
+    color: var(--text-color);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* Animations */
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-30px);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+}
+
+/* Animation classes */
+.rotate-animation {
+    animation: rotate var(--animation-speed) infinite linear;
+}
+
+.bounce-animation {
+    animation: bounce var(--animation-speed) infinite ease-in-out;
+}
+
+.pulse-animation {
+    animation: pulse var(--animation-speed) infinite ease-in-out;
+}
+
+/* Animation speeds */
+.slow {
+    --animation-speed: var(--transition-slow);
+}
+
+.medium {
+    --animation-speed: var(--transition-medium);
+}
+
+.fast {
+    --animation-speed: var(--transition-fast);
+}
+
+/* Save button animation */
+@keyframes saveSuccess {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.save-success {
+    animation: saveSuccess 0.5s;
+    background-color: #4CAF50;
+}
