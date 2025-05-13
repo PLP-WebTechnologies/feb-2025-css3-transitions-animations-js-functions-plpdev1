@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Switcher with Animations</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="title">Theme Switcher</h1>
+            <div class="theme-toggle">
+                <button id="theme-toggle-btn">
+                    <span class="toggle-icon">🌙</span>
+                </button>
+            </div>
+        </header>
+        
+        <main>
+            <div class="card">
+                <div class="card-header">
+                    <h2>CSS Animations Demo</h2>
+                </div>
+                <div class="card-body">
+                    <div class="animation-box">
+                        <div class="animated-element"></div>
+                    </div>
+                    <div class="controls">
+                        <button id="start-animation" class="btn">Play Animation</button>
+                        <button id="reset-animation" class="btn">Reset</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h2>User Preferences</h2>
+                </div>
+                <div class="card-body">
+                    <div class="preferences">
+                        <div class="preference-item">
+                            <label for="animation-speed">Animation Speed:</label>
+                            <select id="animation-speed">
+                                <option value="slow">Slow</option>
+                                <option value="medium" selected>Medium</option>
+                                <option value="fast">Fast</option>
+                            </select>
+                        </div>
+                        <div class="preference-item">
+                            <label for="animation-type">Animation Type:</label>
+                            <select id="animation-type">
+                                <option value="rotate">Rotate</option>
+                                <option value="bounce" selected>Bounce</option>
+                                <option value="pulse">Pulse</option>
+                            </select>
+                        </div>
+                        <button id="save-preferences" class="btn">Save Preferences</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>CSS3 Transitions, Animations, and Advanced JavaScript Demo</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
